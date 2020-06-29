@@ -1,6 +1,6 @@
 # adapt-contrib-instructionError  
     
-**Instruction Error** is an *extension* which can be install in the [Adapt framework](https://github.com/adaptlearning/adapt_framework).  
+**Instruction Error** is an *extension* which can be installed in the [Adapt framework](https://github.com/adaptlearning/adapt_framework).  
 It provides core [*question components*](https://github.com/adaptlearning/adapt_framework/wiki/Core-Plug-ins-in-the-Adapt-Learning-Framework#question-components) with the ability to display an error reiterating the question instructions on an invalid submission. The error is configured globally but may take values from the question component.
 
 ## Installation
