@@ -29,7 +29,7 @@
                   "inputType": "Text",
                   "validators": [],
                   "help": "Set the notify title for the instruction error"
-                }
+                },
                 "body": {
                   "type": "string",
                   "required": false,
