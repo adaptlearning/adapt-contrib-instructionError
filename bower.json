@@ -1,0 +1,17 @@
+{
+  "name": "adapt-contrib-instructionError",
+  "version": "0.1.0",
+  "framework": ">=5.5",
+  "homepage": "https://github.com/adaptlearning/adapt-contrib-instructionError",
+  "issues": "https://github.com/adaptlearning/adapt_framework/issues/new",
+  "extension" : "instructionError",
+  "displayName" : "Instruction Error",
+  "description": "An extension providing an accessible error for invalid question submissions reiterating the question instructions",
+  "main": "/js/adapt-contrib-instructionError.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-extension"
+  ],
+  "license": "GPL-3.0",
+  "targetAttribute": "_instructionError"
+}

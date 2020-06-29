@@ -1,0 +1,6 @@
+// Add to course.json
+"_instructionError": {
+  "_isEnabled": false,
+  "title": "Instructions",
+  "body": "{{#if instruction}}{{instruction}}{{else}}Please complete the question and then click Submit.{{/if}}"
+}

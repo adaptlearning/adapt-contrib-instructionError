@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "properties": {
+    "pluginLocations": {
+      "type": "object",
+      "properties": {
+        "course": {
+          "type": "object",
+          "properties": {
+            "_instructionError": {
+              "type": "object",
+              "required": false,
+              "legend": "Instruction Error",
+              "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "required": false,
+                  "title": "Enable Instruction Error",
+                  "inputType": "Checkbox",
+                  "validators": []
+                },
+                "title": {
+                  "type": "string",
+                  "required": false,
+                  "default": "Instructions",
+                  "title": "Notify Title",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "Set the notify title for the instruction error"
+                }
+                "body": {
+                  "type": "string",
+                  "required": false,
+                  "default": "{{#if instruction}}{{instruction}}{{else}}Please complete the question and then click Submit.{{/if}}",
+                  "title": "Notify Body",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "Set the notify body for the instruction error, defaults to the question instruction text"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
