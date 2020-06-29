@@ -5,12 +5,10 @@ It provides core [*question components*](https://github.com/adaptlearning/adapt_
 
 ## Installation
 
-As one of Adapt's *[core extensions](https://github.com/adaptlearning/adapt_framework/wiki/Core-Plug-ins-in-the-Adapt-Learning-Framework#extensions),* **Tutor** is included with the [installation of the Adapt framework](https://github.com/adaptlearning/adapt_framework/wiki/Manual-installation-of-the-Adapt-framework#installation) and the [installation of the Adapt authoring tool](https://github.com/adaptlearning/adapt_authoring/wiki/Installing-Adapt-Origin).
-
 **Instruction Error** can be installed using the [Adapt CLI](https://github.com/adaptlearning/adapt-cli), run the following from the command line:  
 `adapt install adapt-contrib-instructionError`
 
-    Alternatively, this extension can also be installed by adding the following line of code to the *adapt.json* file:  
+* This extension can also be installed by adding the following line of code to the *adapt.json* file:  
     `"adapt-contrib-instructionError": "*"`  
     Then running the command:  
     `adapt install`  
@@ -33,7 +31,7 @@ As one of Adapt's *[core extensions](https://github.com/adaptlearning/adapt_fram
 No known limitations.
 
 ----------------------------
-**Version number:**  0.10   <a href="https://community.adaptlearning.org/" target="_blank"><img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg" alt="adapt learning logo" align="right"></a>  
+**Version number:**  0.1.0   <a href="https://community.adaptlearning.org/" target="_blank"><img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg" alt="adapt learning logo" align="right"></a>  
 **Framework versions:**  5.5+  
 **Author / maintainer:** Adapt Core Team with [contributors](https://github.com/adaptlearning/adapt-contrib-tutor/graphs/contributors)  
 **Accessibility support:** WAI AA  
