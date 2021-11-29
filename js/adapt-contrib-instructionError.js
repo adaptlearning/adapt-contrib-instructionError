@@ -9,7 +9,7 @@ class InstructionError extends Backbone.Controller {
 
   onDataReady() {
     this.config = Adapt.course.get('_instructionError');
-    if (!this.config || !this.config._isEnabled) return;
+    if (!this.config?._isEnabled) return;
 
     this.listenTo(Adapt, 'questionView:showInstructionError', this.onInstructionError);
     Adapt.data.forEach(model => {
