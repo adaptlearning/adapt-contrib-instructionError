@@ -1,5 +1,7 @@
 import Adapt from 'core/js/adapt';
+import data from 'core/js/data';
 import QuestionModel from 'core/js/models/questionModel';
+import notify from 'core/js/notify';
 
 class InstructionError extends Backbone.Controller {
 
@@ -12,7 +14,7 @@ class InstructionError extends Backbone.Controller {
     if (!this.config?._isEnabled) return;
 
     this.listenTo(Adapt, 'questionView:showInstructionError', this.onInstructionError);
-    Adapt.data.forEach(model => {
+    data.forEach(model => {
       if (!(model instanceof QuestionModel)) return;
       model.set('_canSubmit', true, { pluginName: 'InstructionError' });
     });
@@ -24,7 +26,7 @@ class InstructionError extends Backbone.Controller {
       title: Handlebars.compile(this.config.title)(data),
       body: Handlebars.compile(this.config.body)(data)
     });
-    Adapt.notify.popup(notifyObject);
+    notify.popup(notifyObject);
   }
 
 }
