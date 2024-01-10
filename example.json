@@ -2,5 +2,5 @@
 "_instructionError": {
     "_isEnabled": true,
     "title": "Instructions",
-    "body": "{{#if instruction}}{{instruction}}{{else}}Please complete the question and then select Submit.{{/if}}"
+    "body": "{{#if instruction}}{{{instruction}}}{{else}}Please complete the question and then select Submit.{{/if}}"
 }
