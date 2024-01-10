@@ -28,7 +28,7 @@ It provides core [*question components*](https://github.com/adaptlearning/adapt_
 
 ## Limitations
 
-No known limitations.
+No known limitations. 
 
 ----------------------------
 **Framework versions:**  5.19.1+<a href="https://community.adaptlearning.org/" target="_blank"><img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg" alt="adapt learning logo" align="right"></a><br>
