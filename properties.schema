@@ -33,7 +33,7 @@
                 "body": {
                   "type": "string",
                   "required": false,
-                  "default": "{{#if instruction}}{{instruction}}{{else}}Please complete the question and then click Submit.{{/if}}",
+                  "default": "{{#if instruction}}{{{instruction}}}{{else}}Please complete the question and then click Submit.{{/if}}",
                   "title": "Notify Body",
                   "inputType": "Text",
                   "validators": [],
