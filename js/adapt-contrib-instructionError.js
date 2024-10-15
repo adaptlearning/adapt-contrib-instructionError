@@ -24,16 +24,29 @@ class InstructionError extends Backbone.Controller {
   }
 
   onInstructionError({ model }) {
-    const data = model.toJSON();
-    this.showPopup(data);
+    if (this.config._disablePopup) {
+      this.showInlineError(model);
+      return;
+    }
+    this.showPopup(model);
   }
 
-  showPopup(data) {
+  showPopup(model) {
+    const data = model.toJSON();
     const notifyObject = Object.assign({}, this.config, {
       title: Handlebars.compile(this.config.title)(data),
       body: Handlebars.compile(this.config.body)(data)
     });
     notify.popup(notifyObject);
+  }
+
+  showInlineError(model) {
+    const data = model.toJSON();
+    const classes = [
+      data._classes,
+      'has-error'
+    ].filter(Boolean).join(' ');
+    model.set('_classes', classes);
   }
 
 }
