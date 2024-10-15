@@ -18,13 +18,19 @@ It provides core [*question components*](https://github.com/adaptlearning/adapt_
 
 ## Settings
 
-**\_instructionError** (object): The Instruction Error attributes group contains values for **\_isEnabled**, **title** and **body**.
+### *course.json*
 
->**\_isEnabled** (boolean):  Turns on and off the **Instruction Error** extension. Can only be set in *course.json*.
+The following attributes, set within *course.json*, configure the defaults for **Instruction Error**.
 
->**title** (boolean):  Set the notify title for the instruction error. Can only be set in *course.json*.
+**\_instructionError** (object): The Instruction Error attributes group contains values for **\_isEnabled**, **\_disablePopup**, **title** and **body**.
 
->**body** (boolean):  Set the notify body for the instruction error, defaults to the question instruction text. Can only be set in *course.json*.
+>**\_isEnabled** (boolean):  Turns on and off the **Instruction Error** extension.
+
+>**\_disablePopup** (boolean):  When set to `true`, the **Instruction Error** popup is disabled. Instead, the instruction text is highlighted and keyboard focus moves to the instruction text. The default is `false`.
+
+>**title** (boolean):  Set the notify title for the instruction error.
+
+>**body** (boolean):  Set the notify body for the instruction error, defaults to the question instruction text.
 
 ## Limitations
 

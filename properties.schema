@@ -21,6 +21,15 @@
                   "inputType": "Checkbox",
                   "validators": []
                 },
+                "_disablePopup": {
+                  "type": "boolean",
+                  "required": false,
+                  "default": false,
+                  "title": "Disable popup",
+                  "help": "When set to `true`, the instruction error popup is disabled. Instead, the instruction text is highlighted and keyboard focus moves to the instruction text. The default is `false`.",
+                  "inputType": "Checkbox",
+                  "validators": []
+                },
                 "title": {
                   "type": "string",
                   "required": false,
