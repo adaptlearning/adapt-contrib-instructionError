@@ -18,11 +18,12 @@ class InstructionError extends Backbone.Controller {
       if (!(model instanceof QuestionModel)) return;
       model.set('_canSubmit', true, { pluginName: 'InstructionError' });
       model.set('instructionInitial', model.get('instruction'));
-      model.on('change:_isComplete', this.resetInstruction.bind(this));
+      model.on('change:_isSubmitted', this.resetInstruction.bind(this));
     });
   }
 
   onInstructionError({ model }) {
+    console.log(model.toJSON());
     if (this.config._disablePopup) {
       this.showInlineError(model);
       return;
