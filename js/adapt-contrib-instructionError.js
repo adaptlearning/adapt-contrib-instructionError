@@ -17,6 +17,7 @@ class InstructionError extends Backbone.Controller {
     data.forEach(model => {
       if (!(model instanceof QuestionModel)) return;
       model.set('_canSubmit', true, { pluginName: 'InstructionError' });
+      model.set('instructionInitial', model.get('instruction'));
     });
   }
 
@@ -49,7 +50,8 @@ class InstructionError extends Backbone.Controller {
     ].filter(Boolean).join(' ');
     model.set('_classes', classes);
 
-    const instruction = Handlebars.compile(this.config.body)(data);
+    const dataWithInitial = Object.assign(data, { instruction: model.get('instructionInitial') });
+    const instruction = Handlebars.compile(this.config.body)(dataWithInitial);
     model.set('instruction', instruction);
 
     const $instruction = $(`.${data._id}`).find('.component__instruction').first();
