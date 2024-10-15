@@ -1,4 +1,5 @@
 import Adapt from 'core/js/adapt';
+import a11y from 'core/js/a11y';
 import data from 'core/js/data';
 import QuestionModel from 'core/js/models/questionModel';
 import notify from 'core/js/notify';
@@ -47,8 +48,13 @@ class InstructionError extends Backbone.Controller {
       'has-error'
     ].filter(Boolean).join(' ');
     model.set('_classes', classes);
-  }
 
+    const instruction = Handlebars.compile(this.config.body)(data);
+    model.set('instruction', instruction);
+
+    const $instruction = $(`.${data._id}`).find('.component__instruction').first();
+    a11y.focusFirst($instruction, { defer: true });
+  }
 }
 
 export default new InstructionError();
