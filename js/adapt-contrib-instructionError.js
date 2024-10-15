@@ -40,6 +40,7 @@ class InstructionError extends Backbone.Controller {
   }
 
   showInlineError(model) {
+    const data = model.toJSON();
     this.addErrorClass(model);
 
     // Update instruction text
