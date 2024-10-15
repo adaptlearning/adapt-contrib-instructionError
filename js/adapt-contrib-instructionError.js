@@ -10,7 +10,6 @@ class InstructionError extends Backbone.Controller {
   }
 
   onDataReady() {
-    this.config = Adapt.course.get('_instructionError');
     if (!this.config?._isEnabled) return;
 
     this.listenTo(Adapt, 'questionView:showInstructionError', this.onInstructionError);
@@ -20,8 +19,16 @@ class InstructionError extends Backbone.Controller {
     });
   }
 
+  get config() {
+    return Adapt.course.get('_instructionError');
+  }
+
   onInstructionError({ model }) {
     const data = model.toJSON();
+    this.showPopup(data);
+  }
+
+  showPopup(data) {
     const notifyObject = Object.assign({}, this.config, {
       title: Handlebars.compile(this.config.title)(data),
       body: Handlebars.compile(this.config.body)(data)
