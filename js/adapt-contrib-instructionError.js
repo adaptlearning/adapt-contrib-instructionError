@@ -18,11 +18,8 @@ class InstructionError extends Backbone.Controller {
       if (!(model instanceof QuestionModel)) return;
       model.set('_canSubmit', true, { pluginName: 'InstructionError' });
       model.set('instructionInitial', model.get('instruction'));
+      model.on('change:_isComplete', this.resetInstruction.bind(this));
     });
-  }
-
-  get config() {
-    return Adapt.course.get('_instructionError');
   }
 
   onInstructionError({ model }) {
@@ -43,19 +40,41 @@ class InstructionError extends Backbone.Controller {
   }
 
   showInlineError(model) {
+    this.addErrorClass(model);
+
+    // Update instruction text
+    const dataWithInitial = Object.assign(data, { instruction: model.get('instructionInitial') });
+    const instruction = Handlebars.compile(this.config.body)(dataWithInitial);
+    model.set('instruction', instruction);
+
+    // Focus on instruction text element
+    const $instruction = $(`.${data._id}`).find('.component__instruction').first();
+    a11y.focusFirst($instruction, { defer: true });
+  }
+
+  addErrorClass(model) {
     const data = model.toJSON();
     const classes = [
       data._classes,
       'has-error'
     ].filter(Boolean).join(' ');
     model.set('_classes', classes);
+  }
 
-    const dataWithInitial = Object.assign(data, { instruction: model.get('instructionInitial') });
-    const instruction = Handlebars.compile(this.config.body)(dataWithInitial);
-    model.set('instruction', instruction);
+  removeErrorClass(model) {
+    const data = model.toJSON();
+    const classesArr = data._classes.split(' ');
+    const classes = classesArr.filter(name => name !== 'has-error').join(' ');
+    model.set('_classes', classes);
+  }
 
-    const $instruction = $(`.${data._id}`).find('.component__instruction').first();
-    a11y.focusFirst($instruction, { defer: true });
+  resetInstruction(model) {
+    this.removeErrorClass(model);
+    model.set('instruction', model.get('instructionInitial'));
+  }
+
+  get config() {
+    return Adapt.course.get('_instructionError');
   }
 }
 
