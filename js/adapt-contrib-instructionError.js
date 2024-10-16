@@ -50,7 +50,7 @@ class InstructionError extends Backbone.Controller {
     model.set('instruction', instruction);
 
     // Focus on instruction text element
-    const $instruction = $(`.${data._id}`).find('.component__instruction').first();
+    const $instruction = $(`[data-adapt-id=${data._id}]`).find('.component__instruction').first();
     a11y.focusFirst($instruction, { defer: true });
   }
 
