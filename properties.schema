@@ -21,12 +21,12 @@
                   "inputType": "Checkbox",
                   "validators": []
                 },
-                "_disablePopup": {
+                "_showAsPopup": {
                   "type": "boolean",
                   "required": false,
                   "default": false,
-                  "title": "Disable popup",
-                  "help": "When set to `true`, the instruction error popup is disabled. Instead, the instruction text is highlighted and keyboard focus moves to the instruction text. The default is `false`.",
+                  "title": "Show as popup",
+                  "help": "When set to `true`, the instruction error is shown in a notify popup. The default is `false`.",
                   "inputType": "Checkbox",
                   "validators": []
                 },
@@ -34,7 +34,7 @@
                   "type": "string",
                   "required": false,
                   "default": "Instructions",
-                  "title": "Notify Title",
+                  "title": "Title",
                   "inputType": "Text",
                   "validators": [],
                   "help": "Set the notify title for the instruction error"
@@ -43,10 +43,10 @@
                   "type": "string",
                   "required": false,
                   "default": "{{#if instruction}}{{{instruction}}}{{else}}Please complete the question and then click Submit.{{/if}}",
-                  "title": "Notify Body",
+                  "title": "Body",
                   "inputType": "Text",
                   "validators": [],
-                  "help": "Set the notify body for the instruction error, defaults to the question instruction text"
+                  "help": "When using the 'show as popup' option, this is the notify body for the instruction error. Otherwise, this replaces the existing instruction text. Defaults to the question instruction text. If instruction text is not set, a generic message is used."
                 }
               }
             }

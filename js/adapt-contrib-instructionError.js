@@ -23,11 +23,12 @@ class InstructionError extends Backbone.Controller {
   }
 
   onInstructionError({ model }) {
-    if (this.config._disablePopup) {
-      this.showInlineError(model);
+    if (this.config._showAsPopup) {
+      this.showPopup(model);
       return;
     }
-    this.showPopup(model);
+
+    this.showInlineError(model);
   }
 
   showPopup(model) {

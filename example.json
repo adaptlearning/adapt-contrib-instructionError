@@ -1,7 +1,7 @@
 // Add to course.json
 "_instructionError": {
     "_isEnabled": true,
-    "_disablePopup": false,
+    "_showAsPopup": false,
     "title": "Instructions",
     "body": "{{#if instruction}}{{{instruction}}}{{else}}Please complete the question and then select Submit.{{/if}}"
 }
