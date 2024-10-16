@@ -23,7 +23,6 @@ class InstructionError extends Backbone.Controller {
   }
 
   onInstructionError({ model }) {
-    console.log(model.toJSON());
     if (this.config._disablePopup) {
       this.showInlineError(model);
       return;
@@ -42,7 +41,7 @@ class InstructionError extends Backbone.Controller {
 
   showInlineError(model) {
     const data = model.toJSON();
-    this.addErrorClass(model);
+    model.toggleClass('has-error', true);
 
     // Update instruction text
     const dataWithInitial = Object.assign(data, { instruction: model.get('instructionInitial') });
@@ -54,24 +53,8 @@ class InstructionError extends Backbone.Controller {
     a11y.focusFirst($instruction, { defer: true });
   }
 
-  addErrorClass(model) {
-    const data = model.toJSON();
-    const classes = [
-      data._classes,
-      'has-error'
-    ].filter(Boolean).join(' ');
-    model.set('_classes', classes);
-  }
-
-  removeErrorClass(model) {
-    const data = model.toJSON();
-    const classesArr = data._classes.split(' ');
-    const classes = classesArr.filter(name => name !== 'has-error').join(' ');
-    model.set('_classes', classes);
-  }
-
   resetInstruction(model) {
-    this.removeErrorClass(model);
+    model.toggleClass('has-error', false);
     model.set('instruction', model.get('instructionInitial'));
   }
 
