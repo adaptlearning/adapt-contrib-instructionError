@@ -37,7 +37,7 @@
                   "title": "Title",
                   "inputType": "Text",
                   "validators": [],
-                  "help": "Set the notify title for the instruction error"
+                  "help": "When using the 'show as popup' option, this is the notify title for the instruction error"
                 },
                 "body": {
                   "type": "string",
