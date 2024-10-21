@@ -42,7 +42,6 @@ class InstructionError extends Backbone.Controller {
 
   showInlineError(model) {
     const data = model.toJSON();
-    model.toggleClass('has-error', true);
 
     // Update instruction text
     const dataWithInitial = Object.assign(data, { instruction: model.get('instructionInitial') });
@@ -55,7 +54,6 @@ class InstructionError extends Backbone.Controller {
   }
 
   resetInstruction(model) {
-    model.toggleClass('has-error', false);
     model.set('instruction', model.get('instructionInitial'));
   }
 
