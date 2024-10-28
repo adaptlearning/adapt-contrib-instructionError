@@ -18,20 +18,25 @@ It provides core [*question components*](https://github.com/adaptlearning/adapt_
 
 ## Settings
 
-**\_instructionError** (object): The Instruction Error attributes group contains values for **\_isEnabled**, **title** and **body**.
+### *course.json*
 
->**\_isEnabled** (boolean):  Turns on and off the **Instruction Error** extension. Can only be set in *course.json*.
+The following attributes, set within *course.json*, configure the defaults for **Instruction Error**.
 
->**title** (boolean):  Set the notify title for the instruction error. Can only be set in *course.json*.
+**\_instructionError** (object): The Instruction Error attributes group contains values for **\_isEnabled**, **\_showAsPopup**, **title** and **body**.
 
->**body** (boolean):  Set the notify body for the instruction error, defaults to the question instruction text. Can only be set in *course.json*.
+>**\_isEnabled** (boolean): Turns on and off the **Instruction Error** extension.
+
+>**\_showAsPopup** (boolean): When set to `true`, the **Instruction Error** will display the error in a notify popup. The default is `false`.
+
+>**title** (boolean): When using the `_showAsPopup` option, this is the notify title for the instruction error. Otherwise, this is not used.
+
+>**body** (boolean): When using the `_showAsPopup` option, this is the notify body for the instruction error. Otherwise, this replaces the existing `.component__instruction` text. Defaults to the question instruction text. If instruction text is not set, a generic message is used.
 
 ## Limitations
 
 No known limitations.
 
 ----------------------------
-**Framework versions:**  5.19.1+<a href="https://community.adaptlearning.org/" target="_blank"><img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg" alt="adapt learning logo" align="right"></a><br>
 **Author / maintainer:** Adapt Core Team with [contributors](https://github.com/adaptlearning/adapt-contrib-tutor/graphs/contributors)<br>
 **Accessibility support:** WAI AA<br>
 **RTL support:** Yes<br>
