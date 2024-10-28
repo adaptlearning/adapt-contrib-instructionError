@@ -1,7 +1,7 @@
 {
   "name": "adapt-contrib-instructionError",
-  "version": "2.0.3",
-  "framework": ">=5.19.1",
+  "version": "2.1.0",
+  "framework": ">=5.41.11",
   "homepage": "https://github.com/adaptlearning/adapt-contrib-instructionError",
   "issues": "https://github.com/adaptlearning/adapt_framework/issues/new",
   "extension": "instructionError",
