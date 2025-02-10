@@ -1,0 +1,44 @@
+{
+  "$anchor": "instructionError-course",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$patch": {
+    "source": {
+      "$ref": "course"
+    },
+    "with": {
+      "properties": {
+        "_instructionError": {
+          "type": "object",
+          "title": "Instruction Error",
+          "default": {},
+          "properties": {
+            "_isEnabled": {
+              "type": "boolean",
+              "title": "Enable Instruction Error",
+              "default": false
+            },
+            "_showAsPopup": {
+              "type": "boolean",
+              "title": "Show as popup",
+              "description": "When set to `true`, the instruction error is shown in a notify popup. The default is `false`.",
+              "default": false
+            },
+            "title": {
+              "type": "string",
+              "title": "Title",
+              "description": "When using the 'show as popup' option, this is the notify title for the instruction error",
+              "default": "Instructions"
+            },
+            "body": {
+              "type": "string",
+              "title": "Body",
+              "description": "When using the 'show as popup' option, this is the notify body for the instruction error. Otherwise, this replaces the existing instruction text. Defaults to the question instruction text. If instruction text is not set, a generic message is used.",
+              "default": "{{#if instruction}}{{{instruction}}}{{else}}Please complete the question and then click Submit.{{/if}}"
+            }
+          }
+        }
+      }
+    }
+  }
+}
