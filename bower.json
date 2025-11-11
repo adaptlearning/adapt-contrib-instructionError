@@ -1,6 +1,6 @@
 {
   "name": "adapt-contrib-instructionError",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "framework": ">=5.41.11",
   "homepage": "https://github.com/adaptlearning/adapt-contrib-instructionError",
   "issues": "https://github.com/adaptlearning/adapt_framework/issues/new",
@@ -50,13 +50,15 @@
               "files": "migrations/*.js",
               "from": "@@CURRENT_VERSION",
               "to": "${lastRelease.version}",
-              "countMatches": true
+              "countMatches": true,
+              "allowEmptyPaths": true
             },
             {
               "files": "migrations/*.js",
               "from": "@@RELEASE_VERSION",
               "to": "${nextRelease.version}",
-              "countMatches": true
+              "countMatches": true,
+              "allowEmptyPaths": true
             }
           ]
         }
